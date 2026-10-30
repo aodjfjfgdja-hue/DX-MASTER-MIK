@@ -26,6 +26,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.ScrollView
@@ -155,6 +156,14 @@ class MainActivity : Activity() {
             orientation = LinearLayout.VERTICAL
             setPadding(dp(18), dp(28), dp(18), dp(28))
         }
+
+        // ===== লগো =====
+        root.addView(ImageView(this).apply {
+            setImageResource(R.drawable.logo)
+            layoutParams = LinearLayout.LayoutParams(dp(110), dp(110)).apply {
+                gravity = Gravity.CENTER_HORIZONTAL
+            }
+        })
 
         // ===== টাইটেল =====
         root.addView(mkText("DX MASTER", 38f, cCyan, true).apply {
